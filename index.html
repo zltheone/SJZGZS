@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>登录</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <style>
+        body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            /* background-color: #ffffff; */
+            margin: 0;
+            padding: 0;
+            bottom: 0;
+            top: 0;
+        }
+
+        .container {
+            /* height: 100%; */
+            /* max-width: 400px; */
+            /* margin: 0 auto; */
+            padding: 20px;
+            /* border-radius: 5px; */
+            margin-top: calc(100vh / 1.8);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            top: 0;
+            bottom: 0   ;
+        }
+
+        body {
+            background: url(img/背景图.jpg)no-repeat;
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
+            position: absolute;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/背景图.jpg', sizingMethod='scale');
+            z-index: -1;
+        }
+
+        /* .login-image {
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/背景图.jpg', sizingMethod='scale');
+            background-size: contain;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+            display: flex;
+            margin: 0;
+        } */
+
+        .input-container {
+            border: 0;
+            border-bottom: 1px solid #5c5b5b;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-container label {
+            width: 100px;
+            /* 设置标签宽度，调整此值以适应您的需求 */
+            margin-right: 10px;
+            /* 调整标签和输入框之间的横向距离 */
+        }
+
+        .input-container img {
+            width: 20px;
+            /* 调整图片的宽度，根据您的需要进行调整 */
+            height: 20px;
+            /* 调整图片的高度，根据您的需要进行调整 */
+            margin-right: 10px;
+            /* 调整图片与输入框之间的水平距离，根据您的需要进行调整 */
+        }
+
+
+        input {
+            /* 设置输入框的背景为透明 */
+            background: transparent;
+        }
+
+        input::placeholder {
+            color: #939292
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            font-size: 14px;
+            outline: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        button {
+            flex: 1;
+            padding: 10px;
+            /* margin-bottom: 10px; */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: #d38a2c;
+            color: #fff;
+            cursor: pointer;
+            /* 调整登录按钮与输入框之间的垂直距离 */
+            margin-top: 80px;
+        }
+
+        @media screen {}
+
+        .error-message {
+            color: grey;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 新增的覆盖整个视口的容器 -->
+    <!--<div class="background-container"></div> -->
+    <!-- <img class="login-image" src="img/背景图.jpg" alt="Login Image"> -->
+    <div class="container">
+        <form class="login-form">
+            <div class="input-container">
+                <img src="img/用户名.png" alt="用户名图片">
+                <!-- <label for="username" style="float:left; line-height:25px;">用户名：</label> -->
+                <input type="text" id="username" placeholder="请输入用户名">
+            </div>
+            <div class="input-container">
+                <img src="img/密码.png" alt="密码图片">
+                <!-- <label for="password">密码：</label> -->
+                <input type="password" id="password" placeholder="请输入密码">
+            </div>
+            <div class="error-message" id="error-message" style="display: none;">您没有权限访问</div>
+            <button type="button" onclick="login()">登录</button>
+        </form>
+    </div>
+    <script>
+        function login() {
+            // 在这里编写登录逻辑
+            // 假设登录失败，显示错误消息并自动隐藏
+            var errorMessage = document.getElementById("error-message");
+            errorMessage.style.display = "block";
+
+            // 3秒后自动隐藏错误消息
+            setTimeout(function () {
+                errorMessage.style.display = "none";
+            }, 3000); // 设置延迟时间为3秒 (3000毫秒)
+        }
+    </script>
+</body>
+
+</html>
